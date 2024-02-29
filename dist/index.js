@@ -39,3 +39,8 @@ let calculateTax = function (amount, tax) {
 };
 let taxCalculated = calculateTax(100, 200);
 console.log(taxCalculated);
+let student = {
+    id: 1,
+    name: "Ha"
+};
+console.log(student);

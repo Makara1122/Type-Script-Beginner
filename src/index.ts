@@ -6,6 +6,7 @@ let isPublished : true
 let x : any
 console.log(`a value : ${a}`)
 
+
 // hello world
 
 let arrays : number[] = [1,2,3,4,5]
@@ -35,3 +36,15 @@ let calculateTax = function (amount : number, tax : number) : number {
 }
 let taxCalculated = calculateTax(100,200);
 console.log(taxCalculated)
+
+// Object
+
+let student : {
+    readonly id : number;
+    name : string;
+    salary? : number;
+} = {
+    id : 1,
+    name : "Ha"
+};
+console.log(student)
