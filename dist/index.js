@@ -99,3 +99,8 @@ function greet(name) {
 greet(null);
 greet(undefined);
 greet("Makara");
+function getCustomerDetials(id) {
+    return id === 0 ? null : { name: "makara", birthDate: new Date() };
+}
+let customer = getCustomerDetials(2);
+console.log((customer === null || customer === void 0 ? void 0 : customer.name) || "Guest");

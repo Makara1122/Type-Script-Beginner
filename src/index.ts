@@ -142,3 +142,17 @@ function greet(name : string){
 greet(null)
 greet(undefined)
 greet("Makara")
+
+// nullable objects 
+
+type Customer = {
+   name : string;
+    birthDate : Date;
+};
+function getCustomerDetials(id : number) : Customer | undefined | null {
+    return id === 0? null : {name: "makara", birthDate: new Date()}
+}
+
+let customer = getCustomerDetials(2);
+console.log(customer?.name || "Guest")
+
