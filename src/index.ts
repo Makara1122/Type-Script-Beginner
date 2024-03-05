@@ -48,3 +48,97 @@ let student : {
     name : "Ha"
 };
 console.log(student)
+
+type Employees = {
+  readonly id : number,
+   name : string,
+   salary : number,
+   details : () => string;
+   retirement : (date : Date) => void;
+}
+
+let employee1 : Employees = {
+    id : 1,
+    name : "Tom",
+    salary : 1000,
+    details : function() {
+        return `
+        ID : ${this.id}, Name : ${this.name}`
+    },
+    retirement : function(date : Date) {
+        console.log(`${this.name} is retiring on ${date}`)
+    }
+}
+
+// union type
+
+console.log(employee1.details())
+
+function KgToLbs (weight : number | string) : number {
+    if (typeof weight === "number") {
+        return weight * 2.2
+    } else {
+        return parseFloat(weight) * 2.2 
+    }
+}
+
+console.log(KgToLbs(20))
+console.log(KgToLbs('10Kg'))
+
+
+type Person = {
+    name : string;
+    age : number;
+}
+
+type Employee = {
+    id : number; 
+    salary : number;
+}
+type Manager = {
+    department : string;
+    employees : Employee[];
+}
+type ManagerWithPerson = Person & Manager & Employee;
+
+let manager1 : ManagerWithPerson = {
+    name : " Tom",
+    age : 30,
+    id : 11, 
+    salary : 1000000,
+    department : "IT",
+    employees : [
+        {id : 1, salary : 1000},
+        {id : 2 , salary : 3999}
+    ]
+}
+
+console.log(manager1)
+
+let quantity : any
+
+type Qty = 10 | 20 | 30;
+function printQuantity(value : Qty){
+    console.log(value);
+}
+printQuantity(20)
+
+// String also
+
+type Size = "small" | "medium" | "large";
+
+function printQuantity1(value : Size){
+    console.log(value)
+}
+printQuantity1("medium")
+
+function greet(name : string){
+    if(name){
+        console.log(`Hello ${name}`);
+    } else {
+        console.log(`Hello Guest`)
+    }
+}
+greet(null)
+greet(undefined)
+greet("Makara")
